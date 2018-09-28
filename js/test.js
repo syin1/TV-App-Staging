@@ -13,12 +13,12 @@ $(document).ready(function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      $('#userlogin').text(user.ba.displayName);
+      $('#loginuser').text(user.ba.displayName);
 
       console.log(user);
     } else {
       // No user is signed in.
-      $('#userlogin').text('anonymous');
+      $('#loginuser').text('anonymous');
     }
   });
 });
