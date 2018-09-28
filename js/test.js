@@ -13,7 +13,7 @@ $(document).ready(function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      $('#loginuser').text(user.ba.displayName);
+      $('#loginuser').text(user.displayName);
 
       console.log(user);
     } else {
