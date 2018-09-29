@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Watched Shows</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Post Watched Movie</h1>
+            <p class="lead">This is a html form to quickly populate the Activities database</p>
+          </div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Movie Title</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Movie Director</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Movie Actors</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+          </div>
+          <br>
+          <select class="custom-select custom-select-md mb-3">
+            <option selected>Pick the Movie Genre</option>
+            <option value="1">Drama</option>
+            <option value="2">Action</option>
+            <option value="3">Sci-Fi</option>
+          </select>
+          <br>
+          <br>
+          <label for="customRange3">Movie Rating</label>
+          <input type="range" class="custom-range" min="1" max="10" step="1" id="customRange3">
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <br>
+        </form>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
