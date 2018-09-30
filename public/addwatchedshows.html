@@ -72,6 +72,20 @@
       // alert($("#movieGenre").find(":selected").text());
       // alert($("#movieRating").val());
 
+      var watchedShow = {
+        showsWatched: $("#movieTitle").val(),
+        showsDirector: $("#movieDirector").val(),
+        showsActors: $("#movieActors").val(),
+        showsGenre: $("#movieGenre").find(":selected").text(),
+        showsRating: $("#movieRating").val()
+      };
+
+      console.log(watchedShow);
+
+      $.post("/api/watchedShows", watchedShow, function (data) {
+
+      });
+
     });
 
   </script>
