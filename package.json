@@ -20,7 +20,10 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "jsdom": "^12.1.0",
     "mysql2": "^1.6.1",
+    "request": "^2.88.0",
     "sequelize": "^4.39.0"
   }
 }

@@ -4,9 +4,15 @@
 
 // Dependencies
 // =============================================================
-
 // Requiring our models
 var db = require('../models');
+var request = require('request');
+
+// var jsdom = require('jsdom');
+// const { JSDOM } = jsdom;
+
+// const { document } = new JSDOM('').window;
+// global.document = document;
 
 // Routes
 // =============================================================
@@ -18,6 +24,27 @@ module.exports = function(app) {
       // We have access to the todos as an argument inside of the callback function
       res.json(dbTodo);
     });
+  });
+
+  app.get('/api/trendingMovies', function(req, res) {
+    // $.ajax({
+    //   url:
+    //     'https://api.themoviedb.org/3/trending/movie/day?api_key=94facf6fed66c2573cef2d29403f7cda',
+    //   method: 'GET'
+    // }).then(function(response) {
+    //   res.json(reponse);
+    // });
+
+    request(
+      'https://api.themoviedb.org/3/trending/movie/day?api_key=94facf6fed66c2573cef2d29403f7cda',
+      function(error, response, body) {
+        // If the request is successful
+        // if (!error && data.statusCode === 200) {
+        //   res.json(data.body.results);
+        // }
+        res.json(body);
+      }
+    );
   });
 
   // POST route for saving a new todo
