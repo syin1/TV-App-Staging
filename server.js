@@ -7,7 +7,6 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var $ = require('jquery');
 
 // Sets up the Express App
 // =============================================================

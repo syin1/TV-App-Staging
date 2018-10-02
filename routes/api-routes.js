@@ -7,12 +7,7 @@
 // Requiring our models
 var db = require('../models');
 var request = require('request');
-
-// var jsdom = require('jsdom');
-// const { JSDOM } = jsdom;
-
-// const { document } = new JSDOM('').window;
-// global.document = document;
+require('dotenv').config();
 
 // Routes
 // =============================================================
@@ -36,13 +31,14 @@ module.exports = function(app) {
     // });
 
     request(
-      'https://api.themoviedb.org/3/trending/movie/day?api_key=94facf6fed66c2573cef2d29403f7cda',
+      'https://api.themoviedb.org/3/trending/movie/day?api_key=' +
+        process.env.API_KEY,
       function(error, response, body) {
         // If the request is successful
         // if (!error && data.statusCode === 200) {
         //   res.json(data.body.results);
         // }
-        res.json(body);
+        res.end(body);
       }
     );
   });
