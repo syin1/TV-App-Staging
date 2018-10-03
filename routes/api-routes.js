@@ -22,23 +22,35 @@ module.exports = function(app) {
   });
 
   app.get('/api/trendingMovies', function(req, res) {
-    // $.ajax({
-    //   url:
-    //     'https://api.themoviedb.org/3/trending/movie/day?api_key=94facf6fed66c2573cef2d29403f7cda',
-    //   method: 'GET'
-    // }).then(function(response) {
-    //   res.json(reponse);
-    // });
-
     request(
       'https://api.themoviedb.org/3/trending/movie/day?api_key=' +
         process.env.API_KEY,
       function(error, response, body) {
-        // If the request is successful
-        // if (!error && data.statusCode === 200) {
-        //   res.json(data.body.results);
-        // }
-        res.end(body);
+        if (!error && response.statusCode === 200) {
+          console.log('----------------------------------------------------');
+          console.log(
+            'Background Image:',
+            'https://image.tmdb.org/t/p/w500' +
+              JSON.parse(body).results[0].backdrop_path
+          );
+          console.log(
+            'Poster Image:',
+            'https://image.tmdb.org/t/p/w400' +
+              JSON.parse(body).results[0].poster_path
+          );
+          console.log('Title:', JSON.parse(body).results[0].title);
+          console.log('Plot:', JSON.parse(body).results[0].overview);
+          console.log(
+            'Release Date:',
+            JSON.parse(body).results[0].release_date
+          );
+          console.log('Popularity:', JSON.parse(body).results[0].popularity);
+          console.log(
+            'Vote Average:',
+            JSON.parse(body).results[0].vote_average
+          );
+          console.log('----------------------------------------------------');
+        }
       }
     );
   });
